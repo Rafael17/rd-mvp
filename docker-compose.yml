@@ -1,0 +1,31 @@
+version: "3"
+services:
+  database:
+    container_name: mongo-db
+    image: mongo:5.0.12
+    ports:
+      - 27017:27017
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: rd-mvp
+    command: mongod --quiet --logpath /dev/null
+
+  mongo-seed:
+    container_name: mongo-seed
+    build: ./rd-mvp-api/mongo-seed
+    depends_on:
+      - database
+
+  frontend:
+    container_name: angular-app
+    build: ./rd-mvp-frontend
+    ports:
+      - 8080:8080
+
+  backend:
+    container_name: node-api
+    build: ./rd-mvp-api
+    ports:
+      - 3000:3000
+    depends_on:
+      - database

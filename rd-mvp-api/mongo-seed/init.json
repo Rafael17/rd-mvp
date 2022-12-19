@@ -1,0 +1,38 @@
+[
+  {
+    "title": "project 1",
+    "expenses": [
+      {
+        "amount": 150,
+        "isQualified": true,
+        "title": "expense 1",
+        "timestamp": 1671403112
+      },
+      {
+        "amount": 50,
+        "isQualified": true,
+        "title": "expense 2",
+        "timestamp": 1671403113
+      }
+    ],
+    "cost": 200
+  },
+  {
+    "title": "project 2",
+    "expenses": [
+      {
+        "amount": 10,
+        "isQualified": true,
+        "title": "expense 3",
+        "timestamp": 1671401112
+      },
+      {
+        "amount": 20,
+        "isQualified": true,
+        "title": "expense 4",
+        "timestamp": 1671401113
+      }
+    ],
+    "cost": 30
+  }
+]

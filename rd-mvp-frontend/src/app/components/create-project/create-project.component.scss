@@ -1,0 +1,20 @@
+.project-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-form__expense {
+    border-bottom: 1px solid grey;
+}
+
+.project-form__expense:last-child {
+    border-bottom: 0;
+}
+
+.project-form__expense-column {
+    margin: 0px 10px;
+}
+
+.project-form__add-expense-button {
+    width: 150px;
+}

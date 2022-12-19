@@ -1,0 +1,20 @@
+<div class="projects__header">
+    <app-search-box
+        title="Search Projects"
+        class="projects__search-box"
+        (textUpdated)="searchUpdated($event)"
+    ></app-search-box>
+    <div class="projects__button-wrapper">
+        <button
+            mat-raised-button
+            (click)="openCreateProjectModal()"
+            color="primary"
+        >
+            Create
+        </button>
+    </div>
+</div>
+<app-project-item
+    *ngFor="let project of searchResultProjects"
+    [project]="project"
+></app-project-item>

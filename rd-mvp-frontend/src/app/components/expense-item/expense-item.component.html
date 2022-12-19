@@ -1,0 +1,10 @@
+<div *ngIf="!project.isHidden === true" class="expense-item">
+    <div class="expense-item__title">{{ project.title }}</div>
+    <div class="expense-item__row" *ngFor="let expense of project.expenses">
+        <div class="expense-item__column">{{ expense.title }}</div>
+        <div class="expense-item__column">{{ expense.amount }}</div>
+        <div class="expense-item__column">
+            <mat-checkbox [checked]="expense.isQualified"></mat-checkbox>
+        </div>
+    </div>
+</div>

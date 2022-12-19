@@ -1,0 +1,56 @@
+<form [formGroup]="projectForm" class="project-form">
+    <mat-form-field appearance="standard">
+        <mat-label>Project Title</mat-label>
+        <input formControlName="title" matInput required />
+    </mat-form-field>
+    <button
+        color="primary"
+        mat-raised-button
+        (click)="addExpense()"
+        class="project-form__add-expense-button"
+    >
+        <mat-icon>add</mat-icon>Add Expense
+    </button>
+    <ng-container formArrayName="expenses">
+        <div
+            *ngFor="let expense of expenses.controls; let i = index"
+            class="project-form__expense"
+        >
+            <ng-container [formGroupName]="i">
+                <mat-form-field
+                    appearance="standard"
+                    class="project-form__expense-column"
+                >
+                    <mat-label>Title</mat-label>
+                    <input matInput required formControlName="title" />
+                </mat-form-field>
+                <mat-form-field
+                    appearance="standard"
+                    class="project-form__expense-column"
+                >
+                    <mat-label>Amount</mat-label>
+                    <input
+                        matInput
+                        required
+                        type="number"
+                        formControlName="amount"
+                    />
+                </mat-form-field>
+                <span class="project-form__expense-column">
+                    <mat-checkbox formControlName="isQualified"
+                        >Is Qulified?</mat-checkbox
+                    ></span
+                >
+                <button
+                    color="warn"
+                    mat-raised-button
+                    (click)="removeExpense(i)"
+                    class="project-form__expense-column"
+                >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </ng-container>
+        </div>
+    </ng-container>
+    <button color="primary" mat-raised-button (click)="submit()">Submit</button>
+</form>

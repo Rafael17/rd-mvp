@@ -1,0 +1,8 @@
+<div *ngIf="!project.isHidden" class="pricing-item">
+    <div class="pricing-item__title">{{ project.title }}</div>
+    <div class="pricing-item__button">
+        <a [routerLink]="'/expenses/' + project._id"
+            ><button mat-raised-button>View Expenses</button></a
+        >
+    </div>
+</div>

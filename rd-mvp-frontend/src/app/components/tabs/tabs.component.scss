@@ -1,0 +1,23 @@
+.tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.tab-item {
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+}
+.tab-item:last-child {
+    border-bottom: 0;
+    flex: 1;
+}
+.tab-item--selected {
+    border-right: 0;
+    background-color: rgb(240, 229, 248);
+}
+.tab-item__link {
+    display: block;
+    height: 100%;
+    padding: 20px;
+    cursor: pointer;
+}
